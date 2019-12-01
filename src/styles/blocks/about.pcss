@@ -1,0 +1,139 @@
+.about {
+   position: relative;
+}
+
+.about__container {
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+   height: 60vh;
+   width: 100%;
+
+   @include desktop() {
+      align-items: flex-start;
+   }
+}
+
+.user__avatar {
+   margin-bottom: 50px;
+}
+
+.avatar {
+   display: block;
+   width: 250px;
+   height: 250px;
+   overflow: hidden;
+   border-radius: 50%;
+
+   @include desktop() {
+      width: 180px;
+      height: 180px;
+   } 
+}
+
+.avatar-pic {
+   display: block;
+   object-fit: cover;
+   width: 100%;
+   height: 100%;
+}
+
+.about__left {
+   width: 40%;
+}
+
+.user {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+}
+
+.about__right {
+   width: 50%;
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+   justify-content: center;
+}
+
+.user__desc {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   width: 100%;
+}
+
+.user__desc-item {
+   display: inline-flex;
+   justify-content: space-evenly;
+   padding-left: 80px;
+   width: 80%;
+   margin-bottom: 20px;
+
+   @include desktop() {
+      margin-bottom: 10px;
+      font-size: .8rem;
+   }
+}
+
+.user_key {
+   width: 30%;
+   opacity: .4;
+
+   @include desktop() {
+      margin-right: 20px;
+   }
+} 
+
+.user_value {
+   width: 30%;
+   font-weight: bold;
+   opacity: .7;
+
+   @include desktop() {
+      width: 50%;
+   } 
+}
+
+.about__prolog {
+   opacity: .4;
+   margin-bottom: 10px;
+   font-weight: bold;
+
+}
+
+.about__title {
+   font-size: 3rem;
+   font-weight: bold;
+   margin-bottom: 25px;
+
+}
+
+.about__text {
+   margin-bottom: 70px;
+   opacity: .4;
+   line-height: 2rem;
+   font-style: italic;
+
+   @include desktop() {
+      margin-bottom: 50px;
+   }
+}
+
+.about__ps {
+   font-weight: bold;
+   opacity: .4;
+   padding-right: 20%;
+   line-height: 2rem;
+}
+
+.triangles {
+   display: flex;
+   margin-top: -100px;
+}
+
+.triangles__item {
+   height: 100px;
+   fill: white;
+}

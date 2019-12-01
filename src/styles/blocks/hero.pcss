@@ -1,0 +1,145 @@
+.welcome__section {
+   position: relative;
+   overflow: hidden;
+}
+
+.parallax__layer {
+   position: absolute;
+   z-index: -10;
+
+   &:nth-child(8) {
+         bottom: -500px;
+   }
+
+   &:nth-child(7) {
+      bottom: -200px;
+      right: -400px;
+   }
+
+   &:nth-child(4) {
+         bottom: -400px;
+   }
+}
+
+.layer__img {
+   object-fit: cover;
+   will-change: transform;
+   height: 190vh;
+   width: 100%;
+}
+
+.hero {
+   height: 100vh;
+}
+
+.hero__container {
+   display: flex;
+   flex-direction: column;
+   height: 100%;
+}
+
+.hero__header {
+   padding-top: 40px;
+}
+
+.logo {
+   font-size: 2rem;
+   font-weight: bold;
+}
+
+.socials__icon {
+   width: 28px;
+   height: 31px;
+}
+
+.socials__link {
+   fill: $text-color;
+}
+
+.socials__item {
+   margin-right: 30px;
+
+   &:last-child {
+      margin-right: 0px;
+   }
+}
+
+.hero__menu {
+   display: flex;
+}
+
+.hero__header {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.nav__list {
+   display: inline-flex;
+}
+
+.socials {
+   display: inline-flex;
+}
+
+.nav__item {
+   margin-right: 50px;
+}
+
+.nav__link {
+   text-decoration: none;
+
+   @include tablets() {
+      font-size: .7rem;
+   }
+}
+
+.hero__content {
+   display: flex;
+   flex: 1;
+   justify-content: center;
+   align-items: center;   
+}
+
+.user-info {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+
+.user-info__desc {
+   display: flex;
+   text-align: center;
+   opacity: .6;
+}   
+
+.user-info__username {
+   text-align: center;
+   font-weight: 800;
+   font-size: 4rem;
+   line-height: 3.3rem;
+
+   @include desktop() {
+      font-size: 3.5rem;
+   }
+}
+
+.scroll-down-btn {
+   height: 40px;
+   weight: 40px;
+   fill: $text-color;
+   
+}
+
+.scroll-down-text {
+   font-weight: bold;
+
+}
+
+.hero__buttons {
+   display: inline-flex;
+   justify-content: center;
+   align-items: center;
+   padding-bottom: 30px;
+}

@@ -1,0 +1,164 @@
+.reviews {
+   background: url('./../images/content/budda.png') center no-repeat / cover;
+   height: 150vh;
+
+   @include tablets() {
+      height: 100vh;
+   }
+}
+
+.container__reviews {
+   padding-top: 150px;
+
+   @include desktop() {
+      padding-top: 50px;
+   }
+
+   @include tablets() {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+   }
+}
+
+.reviews__slider {
+   width: 70%;
+   padding-left: 30px;
+   position: relative;
+   margin-bottom: 200px;
+
+   @include desktop() {
+      margin-bottom: 100px;
+   }   
+
+   @include tablets() {
+      width: 90%;
+   }
+}
+
+.swiper-container {
+   overflow: hidden;
+   width: 100%;
+}
+
+.swiper-wrapper {
+   display: inline-flex;
+}
+
+.swiper-slide {
+   padding-left: 30px;
+}
+
+.reviews__icon {
+   height: 80px;
+   width: 80px;
+   fill: #dbe2ed;
+}
+
+.reviews__title {
+   font-weight: 700;
+   margin-bottom: 80px;
+
+   @include tablets() {
+      text-align: center;
+      margin-bottom: 100px;
+   }
+} 
+
+.reviews-slider__item {
+   display: inline-flex;
+}
+
+.reviews__desc-item {
+   display: inline-flex;
+   width: 300px;
+    
+   @include desktop() {
+      width: 500px;
+   } 
+} 
+
+.reviews__left {
+   margin-right: 30px;
+}
+
+.reviews__text {
+   font-size: .9rem;
+   line-height: 1.6rem;
+   opacity: .6;
+   margin-bottom: 18px;
+
+}
+
+.reviews__right {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+}
+
+.reviews__user {
+   display: inline-flex;
+   align-items: center;
+}
+
+.reviews__name {
+   font-weight: 700;
+   margin-bottom: 8px;
+
+}
+
+.reviews__position {
+   font-size: .8rem;
+   opacity: .6;
+   font-weight: 500;
+}
+
+.reviews-user__icon {
+   height: 80px;
+   width: 80px;
+   border-radius: 50%;
+   overflow: hidden;
+   margin-right: 20px;
+
+   @include desktop() {
+      height: 60px;
+      width: 60px;
+   }
+}
+
+.reviews-slider__btn {
+   display: inline-flex;
+   position: absolute;
+   left: 50%;
+   top: -100px;
+
+   @include tablets() {
+      top: -60px;
+   }
+} 
+
+.reviews-slider-btn__item {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   border-radius: 50%;
+   height: 40px;
+   width: 40px;
+   border: 1px solid #333;
+   opacity: .7;
+   cursor: pointer;
+   outline: none;
+
+   &--prev {
+      transform: rotate(180deg);
+      transform-origin: center;
+      margin-right: 20px;
+   }
+}
+
+.reviews-slider-btn__item-icon {
+   height: 10px;
+   width: 10px;
+   fill: #333;
+   opacity: .7;
+}

@@ -1,0 +1,139 @@
+.values {
+   height: 100vh;
+
+   @include tablets() {
+      height: 80vh;
+   }
+}
+
+.values__container {
+   display: flex;
+   align-items: center;
+   width: 100%;
+   height: 100%;
+}
+
+.backpack {
+   height: 100%;
+   width: 100%;
+   object-fit: cover;
+   position: absolute;
+   top: 0;
+   left: -150px;
+}
+
+.values__left {
+   width: 40%;
+   height: 100%;
+   position: relative;
+
+   @include tablets() {
+      display: none;
+      height: 0%;
+
+   }
+}
+
+.values__right {
+   width: 60%;
+   height: 85%;
+
+   @include tablets() {
+      width: 100%;
+      /* height: 0%; */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: -300px;
+   }
+}
+
+.section__titile {
+   font-weight: 700;
+}
+
+.values__title {
+   margin-bottom: 40px;
+   margin-left: -60px;
+
+   @include tablets() {
+      margin-left: 0px;
+   }
+
+}
+
+.values__desc {
+   width: 70%;
+   line-height: 2rem;
+   font-size: .9rem;
+   opacity: .5;
+   margin-bottom: 50px;
+   margin-left: -60px;
+
+   @include tablets() {
+      margin-left: 0px;
+   }
+}
+
+.skill {
+   position: relative;
+   width: 150px;
+   height: 150px;
+   fill: transparent;
+   stroke: gray;
+   stroke-width: 10px;
+}
+
+.skill__title {
+   font-weight: 600;
+   text-align: center;
+   position: absolute;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+} 
+
+.skill__circle--under-position {
+   stroke: gray;
+   stroke-width: 7px;
+   stroke-dasharray: 502;
+   opacity: .2;
+}
+
+.skill__circle--above-position {
+   stroke-dasharray: 255;
+   stroke: url(#lg);
+   stroke-width: 13px;
+   transform-origin: center;
+}
+
+.user-skills {
+   /* display: flex; */
+}
+
+.skills-row__item {
+   margin-right: 40px;
+   display: inline-flex;
+
+}
+
+.user-skills__item {
+   margin-bottom: 40px;
+}
+
+.skills-row__list {
+   display: inline-flex;
+}
+
+.skills-row__title {
+   /* margin-bottom: 25px;   */
+}
+
+.skill__shape {
+   transform-origin: 50%, 50%;
+   transform: rotate(180deg);
+
+}

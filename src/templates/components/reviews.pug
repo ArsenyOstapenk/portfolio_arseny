@@ -1,0 +1,19 @@
+script(type="text/x-template")#reviews-container
+   .reviews__slider
+      swiper.reviews-slider__item(:options="swiperOption" ref="mySwiper")
+         swiper-slide.reviews__desc-item(v-for="review in reviews")  
+            .reviews__left
+               +icon('quote', 'reviews__icon')
+            .reviews__right
+               .reviews__text {{review.text}}
+               .reviews__user
+                  .reviews-user__icon
+                     img(:src="review['author-pic']").reviews-user__img
+                  .reviews-user__name
+                     h4.reviews__name {{review['author-name']}}
+                     p.reviews__position {{review['author-acc']}} 
+      .reviews-slider__btn   
+         .reviews-slider-btn__item.reviews-slider-btn__item--prev
+            +icon('arrow-down', 'reviews-slider-btn__item-icon')
+         .reviews-slider-btn__item.reviews-slider-btn__item--next
+            +icon('arrow-down', 'reviews-slider-btn__item-icon')

@@ -1,0 +1,63 @@
+script(type="text/x-template")#slider-container
+   .works__container
+      .works__left
+         display(
+            :works="works"
+            :current-work="currentWork"
+            :current-index="currentIndex"
+            @slide="handleSlide"
+            @prv="clickPreviews"
+         )
+      info(
+         :current-work="currentWork"
+      )
+
+script(type="text/x-template")#slider-display
+   .slider(:data-slide="currentIndex + 1")
+      img(:src="currentWork.photo").slider__fullpic
+      thumbs(
+         :works="works"
+         :current-work="currentWork"
+         @prv="$emit('prv', $event)"
+      )
+      btns(  
+         @slide="$emit('slide', $event)" 
+      )               
+
+script(type="text/x-template")#slider-btns
+   .slider__buttons
+      .slider-button
+         a(@click.prevent="$emit('slide', 'prev')").slider-button__item.slider-button__item--slide-next
+            +icon('arrow-down', 'slider__previews-icon')
+         a(@click.prevent="$emit('slide', 'next')").slider-button__item.slider-button__item--slide-prev
+            +icon('arrow-down', 'slider__previews-icon')
+
+script(type="text/x-template")#slider-thumbs
+   .slider__previews
+      ul.previews
+         li.previews__item(
+            @click="$emit('prv', work.id)"
+            v-for="work in reversedWorks"
+            :key="work.id"
+            :class="{active: work.id === currentWork.id}"
+            )
+               a.works-slider__thumb-link
+                  img(:src="work.photo").previews__pic
+
+script(type="text/x-template")#slider-info
+   .works__right
+      tags(
+         :tags="tagsArray"
+      ) 
+      .works__text
+         h3.works__title {{currentWork.title}} 
+      .works__desc-text
+         p {{currentWork.desc}} 
+      a(:href="currentWork.link").iconed-link
+         +icon('link', 'iconed-link__icon')
+         .iconed-link__text Посмотреть сайт            
+
+script(type="text/x-template")#slider-tags
+   .works__tags
+      ul.tags 
+         li.tags__item(v-for="tag in tags" :key="tag") {{tag}}

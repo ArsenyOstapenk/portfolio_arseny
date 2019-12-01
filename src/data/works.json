@@ -1,0 +1,34 @@
+[
+   {
+      "id": 1,
+      "title": "mr. Burger",
+      "skills": "HTML, CSS, SCSS, JavaScript, Gulp, jQuery",
+      "photo": "mrburger-prev.PNG",
+      "link": "https://arsenyostapenk.github.io/mrBurger/",
+      "desc": "Текст второго сайта"
+   },
+   {
+      "id": 2,
+      "title": "Air Planet",
+      "skills": "HTML, CSS",
+      "photo": "prev.PNG",
+      "link": "//google.com",
+      "desc": "Текст первого сайта"
+   },
+   {
+      "id": 3,
+      "title": "Пан Потолок",
+      "skills": "HTML, CSS, JavaScript, jQuery",
+      "photo": "pan-potolok-prev.PNG",
+      "link": "http://xn----7sb5adihabcd8a.xn--p1ai/",
+      "desc": "Текст 3 сайта"
+   },
+   {
+      "id": 4,
+      "title": "Мой личный сайт",
+      "skills": "HTML, CSS, SCSS, PCSS, JavaScript, Vue.js, Webpack",
+      "photo": "portfol-prev.PNG",
+      "link": "",
+      "desc": "Текст 4ого сайта"
+   }   
+]

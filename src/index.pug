@@ -1,0 +1,158 @@
+include ./mixins.pug
+
+<!DOCTYPE html>
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    title Portfolio | main page
+  body
+    .wrapper
+      .maincontent
+        .welcome__section
+          .parallax
+            .parallax__layer(data-speed="0.1")
+              +image('content/layer-1.png', 'layer__img')
+            .parallax__layer(data-speed="0.13")
+              +image('content/layer-2.png', 'layer__img')
+            .parallax__layer(data-speed="0.2")
+              +image('content/layer-3.png', 'layer__img')
+            .parallax__layer(data-speed="0.2")
+              +image('content/layer-4.png', 'layer__img')
+            .parallax__layer(data-speed="0.2")
+              +image('content/layer-5.png', 'layer__img')
+            .parallax__layer(data-speed="0.1")
+              +image('content/layer-6.png', 'layer__img')
+            .parallax__layer(data-speed="0.1")
+              +image('content/layer-7.png', 'layer__img')
+            .parallax__layer(data-speed="0.1")
+              +image('content/layer-7.png', 'layer__img')            
+          section.hero
+            .container.hero__container
+              header.hero__header
+                .hero__logo
+                  .logo OA
+                .hero__menu
+                  nav.nav
+                    - var menu = ['Главная', 'Обо мне', 'Навыки', 'Работы', 'Отзывы', 'Связаться']
+                    ul.nav__list
+                      each item in menu 
+                        li.nav__item
+                          a(href="").nav__link #{item}
+                .hero__links 
+                  - var icon = ['insta', 'vk', 'github']
+                  ul.socials 
+                    each item in icon
+                      li.socials__item
+                        a(href="").socials__link
+                          +icon(`${item}`, 'socials__icon')
+              .hero__content
+                .user-info
+                  h4.user-info__desc Личный сайт <br> веб разработчика
+                  .user-info__username Остапенко <br> Арсений
+              .hero__buttons
+                .scroll-down-text Скролл
+                +icon('scroll', 'scroll-down-btn ')
+          section.about
+            .container
+              .about__container
+                .about__left
+                  .user
+                    .avatar.user__avatar
+                      +image('content/user.png', 'avatar-pic')
+                    ul.user__desc
+                      - 
+                        var items = [
+                          ['Проживаю:', 'Уфа'],
+                          ['Возраст:', '28'],
+                          ['Родился:', '8 апреля 1991']
+                        ]  
+                      each item in items
+                        li.user__desc-item  
+                          .user_key #{item[0]} 
+                          .user_value #{item[1]}         
+                .about__right
+                  h4.about__prolog Привет, меня зовут 
+                  h2.about__title Остапенко Арсений
+                  .about__text Я занимаюсь разработкой современных сайтов и приложений. <br> Мне нравится делать интересные и современные проекты. 
+                  .about__ps Увлекся web разработкой около года назад. Написал  <a href="http://xn----7sb5adihabcd8a.xn--p1ai/" style="color: blue">сайт</a> для компании, в которой работал на тот момент 
+          .triangles
+            svg.triangles__item(viewBox="0 0 1200 100" preserveAspectRatio="none")
+              polygon(points ="0,0 0,100 1200,100")      
+            svg.triangles__item(viewBox="0 0 1200 100" preserveAspectRatio="none")
+              polygon(points ="0,100 1200,100 1200,0")       
+        section.values
+          .container.values__container 
+            .values__left
+              +image('content/backpack.png', 'backpack')
+            .values__right
+              .values__title
+                h2.section__titile Чем я могу быть полезен вам
+              .values__desc 
+                p После прошел четырехмесячный курс по frontend разработке в онлайн школе loftschool. Посмотрите, что я изучил!
+
+              #skills-component
+
+        section.works
+          .container
+            h2.section-works__title Мои Работы
+
+            #slider-component
+
+        section.reviews
+          .triangles
+            svg.triangles__item(viewBox="0 0 1200 100" preserveAspectRatio="none")
+              polygon(points ="0,0 1200,0 1200,100")      
+            svg.triangles__item(viewBox="0 0 1200 100" preserveAspectRatio="none")
+              polygon(points ="0,100 0,0 1200,0")
+          .container.container__reviews    
+            h2.reviews__title Что обо мне говорят 
+
+            #reviews-component
+
+            h2.reviews__title Связаться со мной
+            .input
+              ul.input__elem  
+                -
+                  var inp = [
+                    ['Введите ваше имя', 'user', 'Остапенко Арсений'],
+                    ['Введите Ваш email', 'envelope', 'ostapenko.arseniy@mail.ru'],
+                    ['Сообщение к письму', 'message', 'Требуется Ваша помошь в создании сайта. Интересуют сроки и цена вопроса'],
+                  ]
+                each item in inp 
+                  li.input__elem-item
+                    .input__icon
+                      +icon(`${item[1]}`, 'input__icon-pic')
+                    .input__name
+                      h4.input__name-title #{item[0]}
+                      input(type="text" placeholder=`${item[2]}`).input__input
+              button.input__btn отправить
+        footer.footer
+          .container.container__footer
+            .footer__left
+              .left__year C 2019
+              .left__autor 
+                .autor__name Остапенко Арсений
+                .autor__title Личный сайт веб-разработчика
+            .footer__right
+              .footer__nav
+                nav.nav.footer__nav
+                  - var menu = ['Главная', 'Обо мне', 'Навыки', 'Работы', 'Отзывы', 'Связаться']
+                    ul.nav__list
+                      each item in menu 
+                        li.nav__item
+                          a(href="").nav__link #{item}
+              .right__side
+                .footer__social
+                  - var icon = ['insta', 'vk', 'github']
+                    ul.socials 
+                      each item in icon
+                        li.socials__item--footer
+                          a(href="").socials__link--footer
+                            +icon(`${item}`, 'socials__icon--footer')
+                .footer__quote
+                  .quote__text Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где Вы живете        
+                  .quote__autor Martin Golding 
+
+    include ./templates/entry.pug
